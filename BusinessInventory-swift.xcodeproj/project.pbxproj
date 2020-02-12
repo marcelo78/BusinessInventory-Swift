@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA198C5523F43C9600055541 /* PresenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198C5423F43C9600055541 /* PresenterController.swift */; };
+		BA4782FF23F1DB4400F0913F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4782FE23F1DB4400F0913F /* MainView.swift */; };
+		BA47830323F1DF6800F0913F /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47830223F1DF6800F0913F /* ModelController.swift */; };
 		BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */; };
 		BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */; };
-		BA9304BC23EB3BE10093B3E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304BB23EB3BE10093B3E7 /* ViewController.swift */; };
+		BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */; };
 		BA9304BF23EB3BE10093B3E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9304BD23EB3BE10093B3E7 /* Main.storyboard */; };
 		BA9304C123EB3BE20093B3E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9304C023EB3BE20093B3E7 /* Assets.xcassets */; };
 		BA9304C423EB3BE20093B3E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */; };
 		BA9304CF23EB3BE20093B3E7 /* BusinessInventory_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304CE23EB3BE20093B3E7 /* BusinessInventory_swiftTests.swift */; };
 		BA9304DA23EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304D923EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift */; };
+		BA9304E823EB66D20093B3E7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304E723EB66D20093B3E7 /* Product.swift */; };
+		BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304EB23EC83760093B3E7 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA198C5423F43C9600055541 /* PresenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterController.swift; sourceTree = "<group>"; };
+		BA4782FE23F1DB4400F0913F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BA47830223F1DF6800F0913F /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		BA9304B423EB3BE10093B3E7 /* BusinessInventory-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusinessInventory-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA9304BB23EB3BE10093B3E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA9304BE23EB3BE10093B3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA9304C023EB3BE20093B3E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA9304C323EB3BE20093B3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 		BA9304D523EB3BE20093B3E7 /* BusinessInventory-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusinessInventory-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304D923EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInventory_swiftUITests.swift; sourceTree = "<group>"; };
 		BA9304DB23EB3BE20093B3E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA9304E723EB66D20093B3E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BA9304EB23EC83760093B3E7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA47830423F2EFA800F0913F /* main */ = {
+			isa = PBXGroup;
+			children = (
+				BA4782FE23F1DB4400F0913F /* MainView.swift */,
+				BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */,
+				BA47830223F1DF6800F0913F /* ModelController.swift */,
+				BA198C5423F43C9600055541 /* PresenterController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		BA9304AB23EB3BE10093B3E7 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +120,15 @@
 		BA9304B623EB3BE10093B3E7 /* BusinessInventory-swift */ = {
 			isa = PBXGroup;
 			children = (
+				BA47830423F2EFA800F0913F /* main */,
+				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
 				BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */,
-				BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */,
-				BA9304BB23EB3BE10093B3E7 /* ViewController.swift */,
-				BA9304BD23EB3BE10093B3E7 /* Main.storyboard */,
 				BA9304C023EB3BE20093B3E7 /* Assets.xcassets */,
-				BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */,
 				BA9304C523EB3BE20093B3E7 /* Info.plist */,
+				BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */,
+				BA9304BD23EB3BE10093B3E7 /* Main.storyboard */,
+				BA9304E723EB66D20093B3E7 /* Product.swift */,
+				BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */,
 			);
 			path = "BusinessInventory-swift";
 			sourceTree = "<group>";
@@ -259,7 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA9304BC23EB3BE10093B3E7 /* ViewController.swift in Sources */,
+				BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */,
+				BA4782FF23F1DB4400F0913F /* MainView.swift in Sources */,
+				BA47830323F1DF6800F0913F /* ModelController.swift in Sources */,
+				BA198C5523F43C9600055541 /* PresenterController.swift in Sources */,
+				BA9304E823EB66D20093B3E7 /* Product.swift in Sources */,
+				BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */,
 				BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */,
 				BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */,
 			);
