@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, AddViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()

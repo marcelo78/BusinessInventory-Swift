@@ -8,12 +8,12 @@
 
 import Foundation
 
-class PresenterController: Presentable {
+class MainPresenter: MainPresentableProtocol {
     
-    weak var view: ViewPR?
-    lazy var model = ModelController(with: self)
+    var view: MainViewProtocol?
+    lazy var model = MainModel(with: self)
     
-    init(with view: ViewPR) {
+    init(with view: MainViewProtocol) {
         self.view = view
     }
     

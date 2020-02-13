@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController, ViewPR {
+class MainViewController: UIViewController, MainViewProtocol {
     
-    lazy var presenters = PresenterController(with: self)
+    lazy var presenters = MainPresenter(with: self)
     
     @IBOutlet var changeTextLabel: UILabel!
 

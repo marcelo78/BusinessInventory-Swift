@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA198C5523F43C9600055541 /* PresenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198C5423F43C9600055541 /* PresenterController.swift */; };
-		BA4782FF23F1DB4400F0913F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4782FE23F1DB4400F0913F /* MainView.swift */; };
-		BA47830323F1DF6800F0913F /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47830223F1DF6800F0913F /* ModelController.swift */; };
+		BA198C5523F43C9600055541 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198C5423F43C9600055541 /* MainPresenter.swift */; };
+		BA198CF623F4935800055541 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198CF523F4935800055541 /* DBHelper.swift */; };
+		BA198CF923F493AA00055541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA198CF823F493AA00055541 /* libsqlite3.tbd */; };
+		BA198D0223F591E000055541 /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0123F591E000055541 /* AddPresenter.swift */; };
+		BA198D0423F591F900055541 /* AddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0323F591F900055541 /* AddModel.swift */; };
+		BA198D0623F5929D00055541 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0523F5929D00055541 /* Add.swift */; };
+		BA4782FF23F1DB4400F0913F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4782FE23F1DB4400F0913F /* Main.swift */; };
+		BA47830323F1DF6800F0913F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47830223F1DF6800F0913F /* MainModel.swift */; };
 		BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */; };
 		BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */; };
 		BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */; };
@@ -40,9 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA198C5423F43C9600055541 /* PresenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterController.swift; sourceTree = "<group>"; };
-		BA4782FE23F1DB4400F0913F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		BA47830223F1DF6800F0913F /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		BA198C5423F43C9600055541 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		BA198CF523F4935800055541 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		BA198CF823F493AA00055541 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BA198CFA23F4941600055541 /* BusinessInventory-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BusinessInventory-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA198D0123F591E000055541 /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
+		BA198D0323F591F900055541 /* AddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModel.swift; sourceTree = "<group>"; };
+		BA198D0523F5929D00055541 /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		BA4782FE23F1DB4400F0913F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		BA47830223F1DF6800F0913F /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		BA9304B423EB3BE10093B3E7 /* BusinessInventory-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusinessInventory-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +68,7 @@
 		BA9304D523EB3BE20093B3E7 /* BusinessInventory-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusinessInventory-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304D923EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInventory_swiftUITests.swift; sourceTree = "<group>"; };
 		BA9304DB23EB3BE20093B3E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA9304E723EB66D20093B3E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BA9304E723EB66D20093B3E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = ../../Product.swift; sourceTree = "<group>"; };
 		BA9304EB23EC83760093B3E7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA198CF923F493AA00055541 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,13 +98,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA198CF423F4933700055541 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				BA198CFD23F4952E00055541 /* entity */,
+				BA198CF523F4935800055541 /* DBHelper.swift */,
+				BA198CFA23F4941600055541 /* BusinessInventory-swift-Bridging-Header.h */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		BA198CF723F493AA00055541 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA198CF823F493AA00055541 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA198CFD23F4952E00055541 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				BA9304E723EB66D20093B3E7 /* Product.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		BA198D0023F590A800055541 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				BA198D0523F5929D00055541 /* Add.swift */,
+				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
+				BA198D0123F591E000055541 /* AddPresenter.swift */,
+				BA198D0323F591F900055541 /* AddModel.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		BA47830423F2EFA800F0913F /* main */ = {
 			isa = PBXGroup;
 			children = (
-				BA4782FE23F1DB4400F0913F /* MainView.swift */,
+				BA4782FE23F1DB4400F0913F /* Main.swift */,
 				BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */,
-				BA47830223F1DF6800F0913F /* ModelController.swift */,
-				BA198C5423F43C9600055541 /* PresenterController.swift */,
+				BA47830223F1DF6800F0913F /* MainModel.swift */,
+				BA198C5423F43C9600055541 /* MainPresenter.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -104,6 +153,7 @@
 				BA9304CD23EB3BE20093B3E7 /* BusinessInventory-swiftTests */,
 				BA9304D823EB3BE20093B3E7 /* BusinessInventory-swiftUITests */,
 				BA9304B523EB3BE10093B3E7 /* Products */,
+				BA198CF723F493AA00055541 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,14 +170,14 @@
 		BA9304B623EB3BE10093B3E7 /* BusinessInventory-swift */ = {
 			isa = PBXGroup;
 			children = (
+				BA198CF423F4933700055541 /* db */,
+				BA198D0023F590A800055541 /* detail */,
 				BA47830423F2EFA800F0913F /* main */,
-				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
 				BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */,
 				BA9304C023EB3BE20093B3E7 /* Assets.xcassets */,
 				BA9304C523EB3BE20093B3E7 /* Info.plist */,
 				BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */,
 				BA9304BD23EB3BE10093B3E7 /* Main.storyboard */,
-				BA9304E723EB66D20093B3E7 /* Product.swift */,
 				BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */,
 			);
 			path = "BusinessInventory-swift";
@@ -219,6 +269,7 @@
 				TargetAttributes = {
 					BA9304B323EB3BE10093B3E7 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					BA9304C923EB3BE20093B3E7 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -282,14 +333,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA198D0423F591F900055541 /* AddModel.swift in Sources */,
 				BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */,
-				BA4782FF23F1DB4400F0913F /* MainView.swift in Sources */,
-				BA47830323F1DF6800F0913F /* ModelController.swift in Sources */,
-				BA198C5523F43C9600055541 /* PresenterController.swift in Sources */,
+				BA4782FF23F1DB4400F0913F /* Main.swift in Sources */,
+				BA47830323F1DF6800F0913F /* MainModel.swift in Sources */,
+				BA198C5523F43C9600055541 /* MainPresenter.swift in Sources */,
+				BA198CF623F4935800055541 /* DBHelper.swift in Sources */,
 				BA9304E823EB66D20093B3E7 /* Product.swift in Sources */,
 				BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */,
 				BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */,
+				BA198D0623F5929D00055541 /* Add.swift in Sources */,
 				BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */,
+				BA198D0223F591E000055541 /* AddPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z4349RKP7S;
 				INFOPLIST_FILE = "BusinessInventory-swift/Info.plist";
@@ -471,6 +527,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ma.BusinessInventory-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BusinessInventory-swift/db/BusinessInventory-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z4349RKP7S;
 				INFOPLIST_FILE = "BusinessInventory-swift/Info.plist";
@@ -489,6 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ma.BusinessInventory-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BusinessInventory-swift/db/BusinessInventory-swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ModelController: Model {
+class MainModel: MainModelProtocol {
 
-    var presentable: Presentable?
+    var presentable: MainPresentableProtocol?
     
-    init(with presentable: Presentable) {
+    init(with presentable: MainPresentableProtocol) {
         self.presentable = presentable
     }
 

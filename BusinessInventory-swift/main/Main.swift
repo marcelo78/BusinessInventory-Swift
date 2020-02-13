@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol ViewPR: class {
+protocol MainViewProtocol {
     func showError()
     func showName(name: String)
 }
 
-protocol Presentable {
+protocol MainPresentableProtocol {
     func getName()
     func showName(name: String)
 }
 
-protocol Model {
+protocol MainModelProtocol {
     func getName(completion: @escaping (String) -> ())
     func getNameOther()
 }

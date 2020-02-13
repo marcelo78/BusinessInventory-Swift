@@ -9,18 +9,19 @@
 import Foundation
 
 struct Product {
-    var nameInventory: String
-    var place: String
-    var description: String
-    var type: String
-    var dateProduct: String
-    var barcode: String
-    var boughtNo: Double
-    var soldNo: Double
-    var unidBuyPriceUS: Int
-    var unidSellPriceUS: Int
-    var totalCostUS: Double
-    var totalReceivedUS: Int
-    var totalProfitUS: Int
-    var photo: String
+    var id: Int = 0
+    var nameInventory: String = ""
+    var place: String = ""
+    var description: String = ""
+    var type: String = ""
+    var dateProduct: String = ""
+    var barcode: String = ""
+    var boughtNo: Double = 0.0
+    var soldNo: Double = 0.0
+    var unidBuyPriceUS: Int = 0
+    var unidSellPriceUS: Int = 0
+    var totalCostUS: Double = 0.0
+    var totalReceivedUS: Int = 0
+    var totalProfitUS: Int = 0
+    var photo: String = ""
 }
