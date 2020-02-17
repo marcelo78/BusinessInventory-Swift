@@ -14,7 +14,6 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     
     @IBOutlet var tvProduct: UITableView!
 
-    let animalArray = ["Cat", "Dog", "Snake", "Spider", "Horse", "Mouse"]
     var products: [Product] = []
     
     override func viewDidLoad() {
@@ -33,10 +32,6 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
         print("Error")
     }
     
-    func showName(name: String) {
-        print("showName View: \(name)")
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -50,7 +45,18 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
         
         cell.lblName.text = products[indexPath.row].nameInventory
         cell.lblPlace.text = products[indexPath.row].place
-
+        cell.lblDate.text = products[indexPath.row].dateProduct
+        cell.lblCost.text = "US$\(products[indexPath.row].totalCostUS)"
+        
+        cell.lblRem.text = "\(products[indexPath.row].boughtNo - products[indexPath.row].soldNo) of \(products[indexPath.row].boughtNo)"
+        var total: Double = 0
+        if (products[indexPath.row].boughtNo  == products[indexPath.row].soldNo) {
+            total = Double(products[indexPath.row].totalReceivedUS)
+        } else {
+            total = Double(-products[indexPath.row].totalProfitUS) + (-products[indexPath.row].totalCostUS)
+        }
+        cell.lblRecv.text = "US$ \(total)"
+        cell.lblRecv.textColor = total < 0 ? UIColor.red : UIColor.green
         return cell
     }
 

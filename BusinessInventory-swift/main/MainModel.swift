@@ -17,14 +17,6 @@ class MainModel: MainModelProtocol {
         self.presentable = presentable
     }
 
-    func getName(completion: @escaping (String) -> ()) {
-        completion("Hello")
-    }
-
-    func getNameOther() {
-        self.presentable?.showName(name: "Hello World!")
-    }
-
     func getItems() {
         let products = db.readProduct()
         presentable?.showItems(products: products)

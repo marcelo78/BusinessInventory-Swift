@@ -17,18 +17,6 @@ class MainPresenter: MainPresentableProtocol {
         self.view = view
     }
     
-    func getName() {
-        print("getName presenter")
-//        model.getName { (name) in
-//            self.view?.showName(name: name)
-//        }
-        self.model.getNameOther()
-    }
-
-    func showName(name: String) {
-        self.view?.showName(name: name)
-    }
-
     func getItems() {
         model.getItems()
     }
