@@ -12,7 +12,7 @@ class DBHelper {
     
     init() {
         db = openDatabase()
-        createTable()
+        createTableProduct()
     }
     
     let dbPath: String = "myDb.sqlite"
@@ -30,7 +30,7 @@ class DBHelper {
         }
     }
     
-    func createTable() {
+    func createTableProduct() {
         var createTableString = "CREATE TABLE IF NOT EXISTS product ("
         createTableString += "Id INTEGER PRIMARY KEY AUTOINCREMENT, "
         createTableString += "name_inventory TEXT, "
@@ -60,14 +60,7 @@ class DBHelper {
         sqlite3_finalize(createTableStatement)
     }
     
-    func insert(id:Int, name:String, age:Int) {
-        let persons = read()
-        for p in persons {
-            if (p.id == id) {
-                return
-            }
-        }
-
+    func insertProduct(product: Product) {
         var insertStatementString = "INSERT INTO product (name_inventory, place, "
         insertStatementString += "description, type, date_product, "
         insertStatementString += "barcode, bought_no, sold_no, "
@@ -79,9 +72,20 @@ class DBHelper {
         insertStatementString += "?,?,?)"
         var insertStatement: OpaquePointer? = nil
         if (sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK) {
-            sqlite3_bind_int(insertStatement, 1, Int32(id))
-            sqlite3_bind_text(insertStatement, 2, (name as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(insertStatement, 3, Int32(age))
+            sqlite3_bind_text(insertStatement, 1, (product.nameInventory as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 2, (product.place as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 3, (product.description as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, (product.type as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 5, (product.dateProduct as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 6, (product.barcode as NSString).utf8String, -1, nil)
+            sqlite3_bind_double(insertStatement, 7, Double(product.boughtNo))
+            sqlite3_bind_double(insertStatement, 8, Double(product.soldNo))
+            sqlite3_bind_int(insertStatement, 9, Int32(product.unidBuyPriceUS))
+            sqlite3_bind_int(insertStatement, 10, Int32(product.unidSellPriceUS))
+            sqlite3_bind_double(insertStatement, 11, Double(product.totalCostUS))
+            sqlite3_bind_int(insertStatement, 12, Int32(product.totalReceivedUS))
+            sqlite3_bind_int(insertStatement, 13, Int32(product.totalProfitUS))
+            sqlite3_bind_text(insertStatement, 14, (product.photo as NSString).utf8String, -1, nil)
             
             if (sqlite3_step(insertStatement) == SQLITE_DONE) {
                 print("Successfully inserted row.")
@@ -94,7 +98,7 @@ class DBHelper {
         sqlite3_finalize(insertStatement)
     }
     
-    func read() -> [Product] {
+    func readProduct() -> [Product] {
         let queryStatementString = "SELECT * FROM product"
         var queryStatement: OpaquePointer? = nil
         var psns : [Product] = []
@@ -127,8 +131,8 @@ class DBHelper {
         return psns
     }
     
-    func deleteByID(id:Int) {
-        let deleteStatementStirng = "DELETE FROM product WHERE Id = ?;"
+    func deleteProductByID(id:Int) {
+        let deleteStatementStirng = "DELETE FROM product WHERE Id = ?"
         var deleteStatement: OpaquePointer? = nil
         if (sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK) {
             sqlite3_bind_int(deleteStatement, 1, Int32(id))

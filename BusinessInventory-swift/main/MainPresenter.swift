@@ -29,4 +29,12 @@ class MainPresenter: MainPresentableProtocol {
         self.view?.showName(name: name)
     }
 
+    func getItems() {
+        model.getItems()
+    }
+    
+    func showItems(products: [Product]) {
+        view?.showItems(products: products)
+    }
+
 }

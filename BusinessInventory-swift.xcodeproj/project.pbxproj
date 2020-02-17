@@ -13,6 +13,9 @@
 		BA198D0223F591E000055541 /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0123F591E000055541 /* AddPresenter.swift */; };
 		BA198D0423F591F900055541 /* AddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0323F591F900055541 /* AddModel.swift */; };
 		BA198D0623F5929D00055541 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D0523F5929D00055541 /* Add.swift */; };
+		BA198D4423F5E73700055541 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D4323F5E73700055541 /* Tools.swift */; };
+		BA198D8223F71E8F00055541 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8123F71E8E00055541 /* CustomCell.swift */; };
+		BA198D8423F7310600055541 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8323F7310600055541 /* ProductTableViewCell.swift */; };
 		BA4782FF23F1DB4400F0913F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4782FE23F1DB4400F0913F /* Main.swift */; };
 		BA47830323F1DF6800F0913F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47830223F1DF6800F0913F /* MainModel.swift */; };
 		BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		BA198D0123F591E000055541 /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
 		BA198D0323F591F900055541 /* AddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModel.swift; sourceTree = "<group>"; };
 		BA198D0523F5929D00055541 /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		BA198D4323F5E73700055541 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		BA198D8123F71E8E00055541 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		BA198D8323F7310600055541 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		BA4782FE23F1DB4400F0913F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		BA47830223F1DF6800F0913F /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		BA9304B423EB3BE10093B3E7 /* BusinessInventory-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusinessInventory-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +135,8 @@
 			children = (
 				BA198D0523F5929D00055541 /* Add.swift */,
 				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
-				BA198D0123F591E000055541 /* AddPresenter.swift */,
 				BA198D0323F591F900055541 /* AddModel.swift */,
+				BA198D0123F591E000055541 /* AddPresenter.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 				BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */,
 				BA47830223F1DF6800F0913F /* MainModel.swift */,
 				BA198C5423F43C9600055541 /* MainPresenter.swift */,
+				BA198D8123F71E8E00055541 /* CustomCell.swift */,
+				BA198D8323F7310600055541 /* ProductTableViewCell.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 				BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */,
 				BA9304BD23EB3BE10093B3E7 /* Main.storyboard */,
 				BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */,
+				BA198D4323F5E73700055541 /* Tools.swift */,
 			);
 			path = "BusinessInventory-swift";
 			sourceTree = "<group>";
@@ -333,17 +342,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA198D4423F5E73700055541 /* Tools.swift in Sources */,
 				BA198D0423F591F900055541 /* AddModel.swift in Sources */,
 				BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */,
 				BA4782FF23F1DB4400F0913F /* Main.swift in Sources */,
 				BA47830323F1DF6800F0913F /* MainModel.swift in Sources */,
 				BA198C5523F43C9600055541 /* MainPresenter.swift in Sources */,
+				BA198D8423F7310600055541 /* ProductTableViewCell.swift in Sources */,
 				BA198CF623F4935800055541 /* DBHelper.swift in Sources */,
 				BA9304E823EB66D20093B3E7 /* Product.swift in Sources */,
 				BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */,
 				BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */,
 				BA198D0623F5929D00055541 /* Add.swift in Sources */,
 				BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */,
+				BA198D8223F71E8F00055541 /* CustomCell.swift in Sources */,
 				BA198D0223F591E000055541 /* AddPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

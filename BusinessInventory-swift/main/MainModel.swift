@@ -11,6 +11,7 @@ import Foundation
 class MainModel: MainModelProtocol {
 
     var presentable: MainPresentableProtocol?
+    var db = DBHelper()
     
     init(with presentable: MainPresentableProtocol) {
         self.presentable = presentable
@@ -22,6 +23,11 @@ class MainModel: MainModelProtocol {
 
     func getNameOther() {
         self.presentable?.showName(name: "Hello World!")
+    }
+
+    func getItems() {
+        let products = db.readProduct()
+        presentable?.showItems(products: products)
     }
 
 }

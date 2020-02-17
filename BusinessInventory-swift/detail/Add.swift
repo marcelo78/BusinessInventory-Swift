@@ -9,10 +9,19 @@
 import Foundation
 
 protocol AddViewProtocol {
+    func showResult()
+    
+    func showErrorMessage(message: String, field: String)
 }
 
 protocol AddPresentableProtocol {
+    func insertItem(product: Product)
+    
+    func showResult()
+    
+    func validateField(product: Product) -> Bool
 }
 
 protocol AddModelProtocol {
+    func insertItem(product: Product)
 }

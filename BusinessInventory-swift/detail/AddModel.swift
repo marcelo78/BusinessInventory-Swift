@@ -9,5 +9,17 @@
 import Foundation
 
 class AddModel: AddModelProtocol {
+
+    var presentable: AddPresentableProtocol?
+    var db = DBHelper()
+    
+    init(with presentable: AddPresentableProtocol) {
+        self.presentable = presentable
+    }
+    
+    func insertItem(product: Product) {
+        db.insertProduct(product: product)
+        presentable?.showResult()
+    }
     
 }
