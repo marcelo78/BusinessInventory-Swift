@@ -99,9 +99,9 @@ class DBHelper {
     }
     
     func readProduct() -> [Product] {
-        let queryStatementString = "SELECT * FROM product"
+        let queryStatementString = "SELECT * FROM product ORDER BY 2 ASC"
         var queryStatement: OpaquePointer? = nil
-        var psns : [Product] = []
+        var psns: [Product] = []
         if (sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK) {
             while (sqlite3_step(queryStatement) == SQLITE_ROW) {
                 let id = sqlite3_column_int(queryStatement, 0)
@@ -147,4 +147,73 @@ class DBHelper {
         sqlite3_finalize(deleteStatement)
     }
     
+    func getProduct(idItem: Int) -> Product {
+        let queryStatementString = "SELECT * FROM product WHERE Id = ?"
+        var queryStatement: OpaquePointer? = nil
+        var psns = Product()
+        if (sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK) {
+            sqlite3_bind_int(queryStatement, 1, Int32(idItem))
+            while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                let id = sqlite3_column_int(queryStatement, 0)
+                let nameInventory = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let place = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let description = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let type = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                let dateProduct = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
+                let barcode = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
+                let boughtNo = sqlite3_column_double(queryStatement, 7)
+                let soldNo = sqlite3_column_double(queryStatement, 8)
+                let unidBuyPriceUs = sqlite3_column_int(queryStatement, 9)
+                let unidSellPriceUs = sqlite3_column_int(queryStatement, 10)
+                let totalCostUs = sqlite3_column_double(queryStatement, 11)
+                let totalReceivedUs = sqlite3_column_int(queryStatement, 12)
+                let totalProfitUs = sqlite3_column_int(queryStatement, 13)
+                let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 14)))
+                
+                psns = Product(id: Int(id), nameInventory: nameInventory, place: place, description: description, type: type, dateProduct: dateProduct, barcode: barcode, boughtNo: boughtNo, soldNo: soldNo, unidBuyPriceUS: Int(unidBuyPriceUs), unidSellPriceUS: Int(unidSellPriceUs), totalCostUS: totalCostUs, totalReceivedUS: Int(totalReceivedUs), totalProfitUS: Int(totalProfitUs), photo: photo )
+                print("Query Result:")
+                print("\(id) | \(nameInventory) | \(place) | \(description) | \(type) | \(dateProduct) | \(barcode) | \(boughtNo) | \(soldNo) | \(unidBuyPriceUs) | \(unidSellPriceUs) | \(totalCostUs) | \(totalReceivedUs) | \(totalProfitUs) | \(photo)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return psns
+    }
+    
+    func updateProduct(product: Product) {
+        var updateStatementString = "UPDATE product SET name_inventory = ?, place = ?, "
+        updateStatementString += "description = ?, type = ?, date_product = ?, "
+        updateStatementString += "barcode = ?, bought_no = ?, sold_no = ?, "
+        updateStatementString += "unid_buy_price_us = ?, unid_sell_price_us = ?, total_cost_us = ?, "
+        updateStatementString += "total_received_us = ?, total_profit_us = ?, photo = ? "
+        updateStatementString += "WHERE Id = ?"
+        var updateStatement: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK) {
+            sqlite3_bind_text(updateStatement, 1, (product.nameInventory as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 2, (product.place as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 3, (product.description as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 4, (product.type as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 5, (product.dateProduct as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 6, (product.barcode as NSString).utf8String, -1, nil)
+            sqlite3_bind_double(updateStatement, 7, Double(product.boughtNo))
+            sqlite3_bind_double(updateStatement, 8, Double(product.soldNo))
+            sqlite3_bind_int(updateStatement, 9, Int32(product.unidBuyPriceUS))
+            sqlite3_bind_int(updateStatement, 10, Int32(product.unidSellPriceUS))
+            sqlite3_bind_double(updateStatement, 11, Double(product.totalCostUS))
+            sqlite3_bind_int(updateStatement, 12, Int32(product.totalReceivedUS))
+            sqlite3_bind_int(updateStatement, 13, Int32(product.totalProfitUS))
+            sqlite3_bind_text(updateStatement, 14, (product.photo as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(updateStatement, 15, Int32(product.id))
+            if (sqlite3_step(updateStatement) == SQLITE_DONE) {
+                print("Successfully update row.")
+            } else {
+                print("Could not update row.")
+            }
+        } else {
+            print("UPDATE statement could not be prepared.")
+        }
+        sqlite3_finalize(updateStatement)
+    }
+
 }

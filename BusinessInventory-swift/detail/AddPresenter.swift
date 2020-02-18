@@ -87,4 +87,16 @@ class AddPresenter: AddPresentableProtocol {
         return true
     }
 
+    func getItem(idItem: Int) {
+        model.getItem(idItem: idItem)
+    }
+
+    func showItem(product: Product) {
+        view?.populate(product: product)
+    }
+    
+    func updateItem(product: Product) {
+        model.updateItem(product: product)
+    }
+
 }

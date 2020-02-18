@@ -15,6 +15,7 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     @IBOutlet var tvProduct: UITableView!
 
     var products: [Product] = []
+    var seletedItem = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
         
         tvProduct.dataSource = self
         tvProduct.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        seletedItem = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +48,7 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! ProductTableViewCell
         
+        cell.id = products[indexPath.row].id
         cell.lblName.text = products[indexPath.row].nameInventory
         cell.lblPlace.text = products[indexPath.row].place
         cell.lblDate.text = products[indexPath.row].dateProduct
@@ -59,11 +65,23 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
         cell.lblRecv.textColor = total < 0 ? UIColor.red : UIColor.green
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ProductTableViewCell
+        seletedItem = cell.id
+        self.performSegue(withIdentifier: "detail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detail") {
+            let addViewController = segue.destination as! AddViewController
+            addViewController.selectedItem = seletedItem
+        }
+    }
 
     func showItems(products: [Product]) {
         self.products = products
         tvProduct.reloadData()
-        print("data")
     }
 
 }

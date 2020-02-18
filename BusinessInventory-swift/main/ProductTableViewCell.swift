@@ -23,6 +23,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet var lblRem: UILabel!
     @IBOutlet var lblRecv: UILabel!
     @IBOutlet var cellView: UIView!
+    var id: Int = 0
     
     @IBInspectable var shadowColor: UIColor? = UIColor.gray
     @IBInspectable var shadowOffsetWidth: Int = 0

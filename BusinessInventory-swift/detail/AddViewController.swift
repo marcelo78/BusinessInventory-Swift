@@ -12,6 +12,8 @@ class AddViewController: UIViewController, AddViewProtocol {
     
     lazy var presenter = AddPresenter(with: self)
     
+    var selectedItem = 0
+    
     @IBOutlet var tfName: UITextField!
     @IBOutlet var tfPlace: UITextField!
     @IBOutlet var tfDescription: UITextField!
@@ -34,6 +36,14 @@ class AddViewController: UIViewController, AddViewProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         lblMessageError.isHidden = true
+        
+        if (selectedItem != 0) {
+            presenter.getItem(idItem: selectedItem)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        selectedItem = 0
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
@@ -59,9 +69,11 @@ class AddViewController: UIViewController, AddViewProtocol {
         
         let isValid = presenter.validateField(product: product)
         if (isValid) {
-            presenter.insertItem(product: product)
-//        } else {
-//            print("Error")
+            if(selectedItem == 0) {
+                presenter.insertItem(product: product)
+            } else {
+                presenter.updateItem(product: product)
+            }
         }
     }
 
@@ -105,6 +117,24 @@ class AddViewController: UIViewController, AddViewProtocol {
         }
         lblMessageError.isHidden = false
         lblMessageError.text = message
+    }
+    
+    func populate(product: Product) {
+        self.product = product
+        tfName.text = product.nameInventory
+        tfPlace.text = product.place
+        tfDescription.text = product.description
+        tfType.text = product.type
+        tfDate.text = product.dateProduct
+        tfBarcode.text = product.barcode
+        tfBoughtNo.text = "\(product.boughtNo)"
+        tfSoldNo.text = "\(product.soldNo)"
+        tfUnidBuyPriceUs.text = "\(product.unidBuyPriceUS)"
+        tfUnidSellPriceUs.text = "\(product.unidSellPriceUS)"
+        tfTotalCostUs.text = "\(product.totalCostUS)"
+        tfTotalReceivedUs.text = "\(product.totalReceivedUS)"
+        tfTotalProfitUs.text = "\(product.totalProfitUS)"
+        tfPhoto.text = product.photo
     }
 
     func closeAdd() {

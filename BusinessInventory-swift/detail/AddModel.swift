@@ -21,5 +21,15 @@ class AddModel: AddModelProtocol {
         db.insertProduct(product: product)
         presentable?.showResult()
     }
-    
+
+    func getItem(idItem: Int) {
+        let product = db.getProduct(idItem: idItem)
+        presentable?.showItem(product: product)
+    }
+
+    func updateItem(product: Product) {
+        db.updateProduct(product: product)
+        presentable?.showResult()
+    }
+
 }
