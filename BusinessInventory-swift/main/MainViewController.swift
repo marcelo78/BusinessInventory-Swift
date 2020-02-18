@@ -74,8 +74,8 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detail") {
-            let addViewController = segue.destination as! AddViewController
-            addViewController.selectedItem = seletedItem
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.seletedItem = seletedItem
         }
     }
 
