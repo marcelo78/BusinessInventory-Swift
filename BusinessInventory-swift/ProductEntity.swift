@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product {
+struct ProductEntity {
     var id: Int = 0
     var nameInventory: String = ""
     var place: String = ""

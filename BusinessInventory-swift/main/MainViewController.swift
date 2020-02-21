@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, MainViewable, UITableViewDelegate, UITableViewDataSource {
     
     lazy var presenters = MainPresenter(with: self)
     
     @IBOutlet var tvProduct: UITableView!
 
-    var products: [Product] = []
-    var seletedItem = 0
+    var products: [ProductEntity] = []
+    var selectedItem = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        seletedItem = 0
+        selectedItem = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,18 +68,18 @@ class MainViewController: UIViewController, MainViewProtocol, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ProductTableViewCell
-        seletedItem = cell.id
+        selectedItem = cell.id
         self.performSegue(withIdentifier: "detail", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detail") {
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.seletedItem = seletedItem
+            detailViewController.selectedItem = selectedItem
         }
     }
 
-    func showItems(products: [Product]) {
+    func showItems(products: [ProductEntity]) {
         self.products = products
         tvProduct.reloadData()
     }

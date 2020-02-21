@@ -10,10 +10,10 @@ import Foundation
 
 class MainModel: MainModelProtocol {
 
-    var presentable: MainPresentableProtocol?
+    var presentable: MainPresentable?
     var db = DBHelper()
     
-    init(with presentable: MainPresentableProtocol) {
+    init(with presentable: MainPresentable) {
         self.presentable = presentable
     }
 

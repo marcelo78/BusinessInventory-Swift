@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController, AddViewProtocol {
+class AddViewController: UIViewController, AddViewable {
     
     lazy var presenter = AddPresenter(with: self)
     
@@ -30,7 +30,7 @@ class AddViewController: UIViewController, AddViewProtocol {
     @IBOutlet var tfPhoto: UITextField!
     @IBOutlet var lblMessageError: UILabel!
 
-    var product = Product()
+    var product = ProductEntity()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,14 @@ class AddViewController: UIViewController, AddViewProtocol {
         if (selectedItem != 0) {
             presenter.getItem(idItem: selectedItem)
         }
+        
+        tfTotalProfitUs.isEnabled = false
+        tfBoughtNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfSoldNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfUnidBuyPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfUnidSellPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfTotalCostUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfTotalReceivedUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,6 +83,11 @@ class AddViewController: UIViewController, AddViewProtocol {
                 presenter.updateItem(product: product)
             }
         }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        fillData()
+        presenter.updateData(product: product, value: textField.text!, idEditText: textField.tag)
     }
 
     func showResult() {
@@ -119,7 +132,7 @@ class AddViewController: UIViewController, AddViewProtocol {
         lblMessageError.text = message
     }
     
-    func populate(product: Product) {
+    func populate(product: ProductEntity) {
         self.product = product
         tfName.text = product.nameInventory
         tfPlace.text = product.place
@@ -137,6 +150,28 @@ class AddViewController: UIViewController, AddViewProtocol {
         tfPhoto.text = product.photo
     }
 
+    func fillData() {
+        product.nameInventory = tfName.text!
+        product.place = tfPlace.text!
+        product.description = tfDescription.text!
+        product.type = tfType.text!
+        product.dateProduct = tfDate.text!
+        product.barcode = tfBarcode.text!
+        product.boughtNo = tfBoughtNo.text?.getValueDouble ?? 0
+        product.soldNo = tfSoldNo.text?.getValueDouble ?? 0
+        product.unidBuyPriceUS = tfUnidBuyPriceUs.text?.getValueInt ?? 0
+        product.unidSellPriceUS = tfUnidSellPriceUs.text?.getValueInt ?? 0
+        product.totalCostUS = tfTotalCostUs.text?.getValueDouble ?? 0
+        product.totalReceivedUS = tfTotalReceivedUs.text?.getValueInt ?? 0
+        product.totalProfitUS = tfTotalProfitUs.text?.getValueInt ?? 0
+        product.photo = tfPhoto.text!
+    }
+    
+    func clearPreErrors() {
+        lblMessageError.isHidden = true
+        lblMessageError.text = ""
+    }
+    
     func closeAdd() {
         self.dismiss(animated: true, completion: nil)
     }

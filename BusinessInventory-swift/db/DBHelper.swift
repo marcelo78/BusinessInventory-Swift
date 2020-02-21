@@ -60,7 +60,7 @@ class DBHelper {
         sqlite3_finalize(createTableStatement)
     }
     
-    func insertProduct(product: Product) {
+    func insertProduct(product: ProductEntity) {
         var insertStatementString = "INSERT INTO product (name_inventory, place, "
         insertStatementString += "description, type, date_product, "
         insertStatementString += "barcode, bought_no, sold_no, "
@@ -98,10 +98,10 @@ class DBHelper {
         sqlite3_finalize(insertStatement)
     }
     
-    func readProduct() -> [Product] {
+    func readProduct() -> [ProductEntity] {
         let queryStatementString = "SELECT * FROM product ORDER BY 2 ASC"
         var queryStatement: OpaquePointer? = nil
-        var psns: [Product] = []
+        var psns: [ProductEntity] = []
         if (sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK) {
             while (sqlite3_step(queryStatement) == SQLITE_ROW) {
                 let id = sqlite3_column_int(queryStatement, 0)
@@ -120,7 +120,7 @@ class DBHelper {
                 let totalProfitUs = sqlite3_column_int(queryStatement, 13)
                 let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 14)))
                 
-                psns.append(Product(id: Int(id), nameInventory: nameInventory, place: place, description: description, type: type, dateProduct: dateProduct, barcode: barcode, boughtNo: boughtNo, soldNo: soldNo, unidBuyPriceUS: Int(unidBuyPriceUs), unidSellPriceUS: Int(unidSellPriceUs), totalCostUS: totalCostUs, totalReceivedUS: Int(totalReceivedUs), totalProfitUS: Int(totalProfitUs), photo: photo ))
+                psns.append(ProductEntity(id: Int(id), nameInventory: nameInventory, place: place, description: description, type: type, dateProduct: dateProduct, barcode: barcode, boughtNo: boughtNo, soldNo: soldNo, unidBuyPriceUS: Int(unidBuyPriceUs), unidSellPriceUS: Int(unidSellPriceUs), totalCostUS: totalCostUs, totalReceivedUS: Int(totalReceivedUs), totalProfitUS: Int(totalProfitUs), photo: photo ))
                 print("Query Result:")
                 print("\(id) | \(nameInventory) | \(place) | \(description) | \(type) | \(dateProduct) | \(barcode) | \(boughtNo) | \(soldNo) | \(unidBuyPriceUs) | \(unidSellPriceUs) | \(totalCostUs) | \(totalReceivedUs) | \(totalProfitUs) | \(photo)")
             }
@@ -147,10 +147,10 @@ class DBHelper {
         sqlite3_finalize(deleteStatement)
     }
     
-    func getProduct(idItem: Int) -> Product {
+    func getProduct(idItem: Int) -> ProductEntity {
         let queryStatementString = "SELECT * FROM product WHERE Id = ?"
         var queryStatement: OpaquePointer? = nil
-        var psns = Product()
+        var psns = ProductEntity()
         if (sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK) {
             sqlite3_bind_int(queryStatement, 1, Int32(idItem))
             while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -170,7 +170,7 @@ class DBHelper {
                 let totalProfitUs = sqlite3_column_int(queryStatement, 13)
                 let photo = String(describing: String(cString: sqlite3_column_text(queryStatement, 14)))
                 
-                psns = Product(id: Int(id), nameInventory: nameInventory, place: place, description: description, type: type, dateProduct: dateProduct, barcode: barcode, boughtNo: boughtNo, soldNo: soldNo, unidBuyPriceUS: Int(unidBuyPriceUs), unidSellPriceUS: Int(unidSellPriceUs), totalCostUS: totalCostUs, totalReceivedUS: Int(totalReceivedUs), totalProfitUS: Int(totalProfitUs), photo: photo )
+                psns = ProductEntity(id: Int(id), nameInventory: nameInventory, place: place, description: description, type: type, dateProduct: dateProduct, barcode: barcode, boughtNo: boughtNo, soldNo: soldNo, unidBuyPriceUS: Int(unidBuyPriceUs), unidSellPriceUS: Int(unidSellPriceUs), totalCostUS: totalCostUs, totalReceivedUS: Int(totalReceivedUs), totalProfitUS: Int(totalProfitUs), photo: photo )
                 print("Query Result:")
                 print("\(id) | \(nameInventory) | \(place) | \(description) | \(type) | \(dateProduct) | \(barcode) | \(boughtNo) | \(soldNo) | \(unidBuyPriceUs) | \(unidSellPriceUs) | \(totalCostUs) | \(totalReceivedUs) | \(totalProfitUs) | \(photo)")
             }
@@ -181,7 +181,7 @@ class DBHelper {
         return psns
     }
     
-    func updateProduct(product: Product) {
+    func updateProduct(product: ProductEntity) {
         var updateStatementString = "UPDATE product SET name_inventory = ?, place = ?, "
         updateStatementString += "description = ?, type = ?, date_product = ?, "
         updateStatementString += "barcode = ?, bought_no = ?, sold_no = ?, "
@@ -214,6 +214,36 @@ class DBHelper {
             print("UPDATE statement could not be prepared.")
         }
         sqlite3_finalize(updateStatement)
+    }
+
+    func getSummary() -> SummaryEntity {
+        var queryStatementString = "SELECT SUM((bought_no - sold_no) * unid_buy_price_us) data1, "
+        queryStatementString += "SUM(CASE WHEN bought_no = sold_no THEN bought_no ELSE (bought_no - sold_no) END) data2, "
+        queryStatementString += "SUM(CASE WHEN bought_no = sold_no THEN 0 ELSE (sold_no) END) data3, "
+        queryStatementString += "ROUND(SUM(total_profit_us), 2) data4, "
+        queryStatementString += "ROUND(SUM(total_cost_us), 2) data5, "
+        queryStatementString += "ROUND(SUM(sold_no * unid_sell_price_us), 2) data6 "
+        queryStatementString += "FROM product"
+        var queryStatement: OpaquePointer? = nil
+        var psns = SummaryEntity()
+        if (sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK) {
+            while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                let data1 = sqlite3_column_double(queryStatement, 0)
+                let data2 = sqlite3_column_double(queryStatement, 1)
+                let data3 = sqlite3_column_double(queryStatement, 2)
+                let data4 = sqlite3_column_double(queryStatement, 3)
+                let data5 = sqlite3_column_double(queryStatement, 4)
+                let data6 = sqlite3_column_double(queryStatement, 5)
+
+                psns = SummaryEntity(data1: data1, data2: data2, data3: data3, data4: data4, data5: data5, data6: data6)
+                print("Query Result:")
+                print("\(data1) | \(data2) | \(data3) | \(data4) | \(data5) | \(data6)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return psns
     }
 
 }

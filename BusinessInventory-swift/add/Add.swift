@@ -8,32 +8,36 @@
 
 import Foundation
 
-protocol AddViewProtocol {
+protocol AddViewable {
     func showResult()
     
     func showErrorMessage(message: String, field: String)
     
-    func populate(product: Product)
+    func populate(product: ProductEntity)
+    
+    func clearPreErrors()
 }
 
-protocol AddPresentableProtocol {
-    func insertItem(product: Product)
+protocol AddPresentable {
+    func insertItem(product: ProductEntity)
     
-    func updateItem(product: Product)
+    func updateItem(product: ProductEntity)
     
     func showResult()
     
-    func validateField(product: Product) -> Bool
+    func validateField(product: ProductEntity) -> Bool
     
     func getItem(idItem: Int)
     
-    func showItem(product: Product)
+    func showItem(product: ProductEntity)
+    
+    func updateData(product: ProductEntity, value: String, idEditText: Int)
 }
 
 protocol AddModelProtocol {
-    func insertItem(product: Product)
+    func insertItem(product: ProductEntity)
     
-    func updateItem(product: Product)
+    func updateItem(product: ProductEntity)
     
     func getItem(idItem: Int)
 }

@@ -8,11 +8,23 @@
 
 import Foundation
 
-protocol DetailViewProtocol {
+protocol DetailViewable {
+    func populate(product: ProductEntity)
+    
+    func showResult()
 }
 
-protocol DetailPresentableProtocol {
+protocol DetailPresentable {
+    func getItem(idItem: Int)
+    
+    func showItem(product: ProductEntity)
+    
+    func deleteItem(idItem: Int)
+    
+    func showResult()
 }
 
 protocol DetailModelProtocol {
+    func getItem(idItem: Int)
+    func deleteItem(idItem: Int)
 }

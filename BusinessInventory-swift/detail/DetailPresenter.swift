@@ -8,13 +8,29 @@
 
 import Foundation
 
-class DetailPresenter: DetailPresentableProtocol {
+class DetailPresenter: DetailPresentable {
     
-    var view: DetailViewProtocol?
+    var view: DetailViewable?
     lazy var model = DetailModel(with: self)
     
-    init(with view: DetailViewProtocol) {
+    init(with view: DetailViewable) {
         self.view = view
+    }
+
+    func getItem(idItem: Int) {
+        model.getItem(idItem: idItem)
+    }
+
+    func showItem(product: ProductEntity) {
+        view?.populate(product: product)
+    }
+
+    func deleteItem(idItem: Int) {
+        model.deleteItem(idItem: idItem)
+    }
+    
+    func showResult() {
+        view?.showResult()
     }
 
 }

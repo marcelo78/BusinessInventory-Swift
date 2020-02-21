@@ -6,6 +6,9 @@ target 'BusinessInventory-swift' do
   use_frameworks!
 
   # Pods for BusinessInventory-swift
+  pod 'SDWebImage', '~> 5.0'
+#  pod 'MGCollapsingHeader'
+  pod 'SimpleCollapsingHeaderView'
 
   target 'BusinessInventory-swiftTests' do
     inherit! :search_paths

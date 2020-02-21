@@ -13,7 +13,12 @@ extension String {
     var getValueInt: Int {
         let value = self
         if value != "" {
-            return Int(self)!
+            if value.contains(".") {
+                let valueDouble: Double = value.getValueDouble
+                return Int(valueDouble)
+            } else {
+                return Int(self) ?? 0
+            }
         } else {
             return 0
         }
@@ -22,7 +27,7 @@ extension String {
     var getValueDouble: Double {
         let value = self
         if value != "" {
-            return Double(self)!
+            return Double(self) ?? 0.0
         } else {
             return 0.0
         }

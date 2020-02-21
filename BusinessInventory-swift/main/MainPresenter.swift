@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MainPresenter: MainPresentableProtocol {
+class MainPresenter: MainPresentable {
     
-    var view: MainViewProtocol?
+    var view: MainViewable?
     lazy var model = MainModel(with: self)
     
-    init(with view: MainViewProtocol) {
+    init(with view: MainViewable) {
         self.view = view
     }
     
@@ -21,7 +21,7 @@ class MainPresenter: MainPresentableProtocol {
         model.getItems()
     }
     
-    func showItems(products: [Product]) {
+    func showItems(products: [ProductEntity]) {
         view?.showItems(products: products)
     }
 

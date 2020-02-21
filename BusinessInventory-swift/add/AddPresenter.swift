@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class AddPresenter: AddPresentableProtocol {
+class AddPresenter: AddPresentable {
 
-    var view: AddViewProtocol?
+    var view: AddViewable?
     
     lazy var model = AddModel(with: self)
     
-    init(with view: AddViewProtocol) {
+    init(with view: AddViewable) {
         self.view = view
     }
     
-    func insertItem(product: Product) {
+    func insertItem(product: ProductEntity) {
         model.insertItem(product: product)
     }
     
@@ -27,7 +27,8 @@ class AddPresenter: AddPresentableProtocol {
         view?.showResult()
     }
 
-    func validateField(product: Product) -> Bool {
+    func validateField(product: ProductEntity) -> Bool {
+        view?.clearPreErrors()
         guard (!product.nameInventory.isEmpty) else {
             view?.showErrorMessage(message: "Empty Field", field: "name")
             return false
@@ -91,12 +92,58 @@ class AddPresenter: AddPresentableProtocol {
         model.getItem(idItem: idItem)
     }
 
-    func showItem(product: Product) {
+    func showItem(product: ProductEntity) {
         view?.populate(product: product)
     }
     
-    func updateItem(product: Product) {
+    func updateItem(product: ProductEntity) {
         model.updateItem(product: product)
     }
 
+    func updateData(product: ProductEntity, value: String, idEditText: Int) {
+        var product = product
+        switch idEditText {
+        case 7, 8: // R.id.etBoughtNo, R.id.etSoldNo
+            if (idEditText == 7) {
+                product.boughtNo = value.getValueDouble
+            } else {
+                product.soldNo = value.getValueDouble
+            }
+            product.totalCostUS = product.boughtNo * String(product.unidBuyPriceUS).getValueDouble
+            product.totalReceivedUS = String(product.soldNo).getValueInt * product.unidSellPriceUS
+            product.totalProfitUS = product.totalReceivedUS - String(product.totalCostUS).getValueInt
+        case 9: // R.id.etUnidBuyPrice
+            product.unidBuyPriceUS = value.getValueInt
+            product.totalCostUS = product.boughtNo * String(product.unidBuyPriceUS).getValueDouble
+            product.totalProfitUS = product.totalReceivedUS - String(product.totalCostUS).getValueInt
+        case 10: // R.id.etUnidSellPrice
+            product.unidSellPriceUS = value.getValueInt
+            product.totalReceivedUS = String(product.soldNo).getValueInt * product.unidSellPriceUS
+            product.totalProfitUS = product.totalReceivedUS - String(product.totalCostUS).getValueInt
+        case 11: // R.id.etTotalCost
+            product.totalCostUS = value.getValueDouble
+
+            let soldNo = product.soldNo
+            let unidSellPriceUs = product.unidSellPriceUS
+            if (soldNo > 0 && unidSellPriceUs > 0) {
+                product.totalReceivedUS = String(product.soldNo).getValueInt * product.unidSellPriceUS
+            }
+            let totalCostUS = product.totalCostUS
+            if (totalCostUS > 0) {
+                product.totalProfitUS = product.totalReceivedUS - String(product.totalCostUS).getValueInt
+            }
+            product.unidBuyPriceUS = 0
+        case 12: // R.id.etTotalReceived
+            product.totalReceivedUS = value.getValueInt
+            let totalCostUS = product.totalCostUS
+            if (totalCostUS > 0) {
+                product.totalProfitUS = product.totalReceivedUS - String(product.totalCostUS).getValueInt
+            }
+            product.unidSellPriceUS = 0
+        default:
+            print("")
+        }
+        view?.populate(product: product)
+    }
+    
 }

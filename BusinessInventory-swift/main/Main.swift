@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol MainViewProtocol {
+protocol MainViewable {
     func showError()
 
-    func showItems(products: [Product])
+    func showItems(products: [ProductEntity])
 }
 
-protocol MainPresentableProtocol {
+protocol MainPresentable {
     func getItems()
  
-    func showItems(products: [Product])
+    func showItems(products: [ProductEntity])
 }
 
 protocol MainModelProtocol {

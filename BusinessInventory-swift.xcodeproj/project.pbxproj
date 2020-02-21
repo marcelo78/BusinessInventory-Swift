@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AFCC2A854CE8CF115DA8235 /* Pods_BusinessInventory_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A505C91AA63119691D77A17B /* Pods_BusinessInventory_swift.framework */; };
+		73A2AFD4E42ABE03E7CFE2D3 /* Pods_BusinessInventory_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179B803E4C30EC9805082DDC /* Pods_BusinessInventory_swiftTests.framework */; };
 		BA198C5523F43C9600055541 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198C5423F43C9600055541 /* MainPresenter.swift */; };
 		BA198CF623F4935800055541 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198CF523F4935800055541 /* DBHelper.swift */; };
 		BA198CF923F493AA00055541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA198CF823F493AA00055541 /* libsqlite3.tbd */; };
@@ -20,8 +22,14 @@
 		BA198D8923FC43A200055541 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8823FC43A200055541 /* DetailPresenter.swift */; };
 		BA198D8B23FC440700055541 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8A23FC440700055541 /* DetailModel.swift */; };
 		BA198D8D23FC447900055541 /* DetailViewContriller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8C23FC447900055541 /* DetailViewContriller.swift */; };
+		BA198D9023FDB99200055541 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA198D8F23FDB99200055541 /* NumberTextField.swift */; };
 		BA4782FF23F1DB4400F0913F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4782FE23F1DB4400F0913F /* Main.swift */; };
 		BA47830323F1DF6800F0913F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47830223F1DF6800F0913F /* MainModel.swift */; };
+		BA4B052A240031AA00FBB9BA /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B0529240031AA00FBB9BA /* SummaryViewController.swift */; };
+		BA4B052C2400336300FBB9BA /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B052B2400336300FBB9BA /* Summary.swift */; };
+		BA4B052E240033CD00FBB9BA /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B052D240033CD00FBB9BA /* SummaryModel.swift */; };
+		BA4B0530240033E200FBB9BA /* SummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B052F240033E200FBB9BA /* SummaryPresenter.swift */; };
+		BA4B053224004B2300FBB9BA /* SummaryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B053124004B2300FBB9BA /* SummaryEntity.swift */; };
 		BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */; };
 		BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */; };
 		BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304BB23EB3BE10093B3E7 /* MainViewController.swift */; };
@@ -30,8 +38,9 @@
 		BA9304C423EB3BE20093B3E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9304C223EB3BE20093B3E7 /* LaunchScreen.storyboard */; };
 		BA9304CF23EB3BE20093B3E7 /* BusinessInventory_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304CE23EB3BE20093B3E7 /* BusinessInventory_swiftTests.swift */; };
 		BA9304DA23EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304D923EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift */; };
-		BA9304E823EB66D20093B3E7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304E723EB66D20093B3E7 /* Product.swift */; };
+		BA9304E823EB66D20093B3E7 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304E723EB66D20093B3E7 /* ProductEntity.swift */; };
 		BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9304EB23EC83760093B3E7 /* AddViewController.swift */; };
+		CBD3FEC385DF5E9AD0F43C39 /* Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4793A2CB8D99B46802A8795E /* Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		179B803E4C30EC9805082DDC /* Pods_BusinessInventory_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessInventory_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4793A2CB8D99B46802A8795E /* Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6671CCD7351BD7652B7002DB /* Pods-BusinessInventory-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swiftTests/Pods-BusinessInventory-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F88EAFE5A1B6BEB0DA2F0CE /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.release.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A505C91AA63119691D77A17B /* Pods_BusinessInventory_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessInventory_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18BC55BB29B13ABC86C4EC6 /* Pods-BusinessInventory-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swift.debug.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swift/Pods-BusinessInventory-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		BA198C5423F43C9600055541 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		BA198CF523F4935800055541 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		BA198CF823F493AA00055541 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -66,8 +81,14 @@
 		BA198D8823FC43A200055541 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		BA198D8A23FC440700055541 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		BA198D8C23FC447900055541 /* DetailViewContriller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContriller.swift; sourceTree = "<group>"; };
+		BA198D8F23FDB99200055541 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		BA4782FE23F1DB4400F0913F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		BA47830223F1DF6800F0913F /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		BA4B0529240031AA00FBB9BA /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		BA4B052B2400336300FBB9BA /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		BA4B052D240033CD00FBB9BA /* SummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
+		BA4B052F240033E200FBB9BA /* SummaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPresenter.swift; sourceTree = "<group>"; };
+		BA4B053124004B2300FBB9BA /* SummaryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryEntity.swift; sourceTree = "<group>"; };
 		BA9304B423EB3BE10093B3E7 /* BusinessInventory-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusinessInventory-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9304B923EB3BE10093B3E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,8 +103,11 @@
 		BA9304D523EB3BE20093B3E7 /* BusinessInventory-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusinessInventory-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9304D923EB3BE20093B3E7 /* BusinessInventory_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInventory_swiftUITests.swift; sourceTree = "<group>"; };
 		BA9304DB23EB3BE20093B3E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA9304E723EB66D20093B3E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = ../../Product.swift; sourceTree = "<group>"; };
+		BA9304E723EB66D20093B3E7 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductEntity.swift; path = ../../ProductEntity.swift; sourceTree = "<group>"; };
 		BA9304EB23EC83760093B3E7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		DCD9825002B3696A1D3D46FC /* Pods-BusinessInventory-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swiftTests/Pods-BusinessInventory-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F39629C3BF1A7737396DF6A0 /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCE8362B05F6751FF604724E /* Pods-BusinessInventory-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessInventory-swift.release.xcconfig"; path = "Target Support Files/Pods-BusinessInventory-swift/Pods-BusinessInventory-swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA198CF923F493AA00055541 /* libsqlite3.tbd in Frameworks */,
+				3AFCC2A854CE8CF115DA8235 /* Pods_BusinessInventory_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A2AFD4E42ABE03E7CFE2D3 /* Pods_BusinessInventory_swiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +132,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD3FEC385DF5E9AD0F43C39 /* Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09471A6BC181A516D7BAEA4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B18BC55BB29B13ABC86C4EC6 /* Pods-BusinessInventory-swift.debug.xcconfig */,
+				FCE8362B05F6751FF604724E /* Pods-BusinessInventory-swift.release.xcconfig */,
+				F39629C3BF1A7737396DF6A0 /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.debug.xcconfig */,
+				9F88EAFE5A1B6BEB0DA2F0CE /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.release.xcconfig */,
+				DCD9825002B3696A1D3D46FC /* Pods-BusinessInventory-swiftTests.debug.xcconfig */,
+				6671CCD7351BD7652B7002DB /* Pods-BusinessInventory-swiftTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA198CF423F4933700055541 /* db */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				BA198CF823F493AA00055541 /* libsqlite3.tbd */,
+				A505C91AA63119691D77A17B /* Pods_BusinessInventory_swift.framework */,
+				4793A2CB8D99B46802A8795E /* Pods_BusinessInventory_swift_BusinessInventory_swiftUITests.framework */,
+				179B803E4C30EC9805082DDC /* Pods_BusinessInventory_swiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,7 +176,8 @@
 		BA198CFD23F4952E00055541 /* entity */ = {
 			isa = PBXGroup;
 			children = (
-				BA9304E723EB66D20093B3E7 /* Product.swift */,
+				BA9304E723EB66D20093B3E7 /* ProductEntity.swift */,
+				BA4B053124004B2300FBB9BA /* SummaryEntity.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -142,9 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				BA198D0523F5929D00055541 /* Add.swift */,
-				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
 				BA198D0323F591F900055541 /* AddModel.swift */,
 				BA198D0123F591E000055541 /* AddPresenter.swift */,
+				BA9304EB23EC83760093B3E7 /* AddViewController.swift */,
 			);
 			path = add;
 			sourceTree = "<group>";
@@ -160,6 +204,14 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		BA198D8E23FDB94100055541 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				BA198D8F23FDB99200055541 /* NumberTextField.swift */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
 		BA47830423F2EFA800F0913F /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +225,17 @@
 			path = main;
 			sourceTree = "<group>";
 		};
+		BA4B05282400317800FBB9BA /* summary */ = {
+			isa = PBXGroup;
+			children = (
+				BA4B052B2400336300FBB9BA /* Summary.swift */,
+				BA4B052D240033CD00FBB9BA /* SummaryModel.swift */,
+				BA4B052F240033E200FBB9BA /* SummaryPresenter.swift */,
+				BA4B0529240031AA00FBB9BA /* SummaryViewController.swift */,
+			);
+			path = summary;
+			sourceTree = "<group>";
+		};
 		BA9304AB23EB3BE10093B3E7 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +244,7 @@
 				BA9304D823EB3BE20093B3E7 /* BusinessInventory-swiftUITests */,
 				BA9304B523EB3BE10093B3E7 /* Products */,
 				BA198CF723F493AA00055541 /* Frameworks */,
+				09471A6BC181A516D7BAEA4F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,10 +261,12 @@
 		BA9304B623EB3BE10093B3E7 /* BusinessInventory-swift */ = {
 			isa = PBXGroup;
 			children = (
+				BA4B05282400317800FBB9BA /* summary */,
 				BA198CF423F4933700055541 /* db */,
 				BA198D0023F590A800055541 /* add */,
 				BA47830423F2EFA800F0913F /* main */,
 				BA198D8523FC40F400055541 /* detail */,
+				BA198D8E23FDB94100055541 /* tools */,
 				BA9304B723EB3BE10093B3E7 /* AppDelegate.swift */,
 				BA9304C023EB3BE20093B3E7 /* Assets.xcassets */,
 				BA9304C523EB3BE20093B3E7 /* Info.plist */,
@@ -237,9 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9304DE23EB3BE20093B3E7 /* Build configuration list for PBXNativeTarget "BusinessInventory-swift" */;
 			buildPhases = (
+				4A3C6427F589239AD3009741 /* [CP] Check Pods Manifest.lock */,
 				BA9304B023EB3BE10093B3E7 /* Sources */,
 				BA9304B123EB3BE10093B3E7 /* Frameworks */,
 				BA9304B223EB3BE10093B3E7 /* Resources */,
+				21F78FAF7E413EABD6B8D7E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +322,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9304E123EB3BE20093B3E7 /* Build configuration list for PBXNativeTarget "BusinessInventory-swiftTests" */;
 			buildPhases = (
+				D12FFA6E8962C048B53CB360 /* [CP] Check Pods Manifest.lock */,
 				BA9304C623EB3BE20093B3E7 /* Sources */,
 				BA9304C723EB3BE20093B3E7 /* Frameworks */,
 				BA9304C823EB3BE20093B3E7 /* Resources */,
@@ -272,9 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9304E423EB3BE20093B3E7 /* Build configuration list for PBXNativeTarget "BusinessInventory-swiftUITests" */;
 			buildPhases = (
+				2C92011B11B37B3FFD1607E8 /* [CP] Check Pods Manifest.lock */,
 				BA9304D123EB3BE20093B3E7 /* Sources */,
 				BA9304D223EB3BE20093B3E7 /* Frameworks */,
 				BA9304D323EB3BE20093B3E7 /* Resources */,
+				3F4A7177A743E9337111DF95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +428,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21F78FAF7E413EABD6B8D7E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift/Pods-BusinessInventory-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift/Pods-BusinessInventory-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift/Pods-BusinessInventory-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C92011B11B37B3FFD1607E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F4A7177A743E9337111DF95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests/Pods-BusinessInventory-swift-BusinessInventory-swiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A3C6427F589239AD3009741 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessInventory-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D12FFA6E8962C048B53CB360 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessInventory-swiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA9304B023EB3BE10093B3E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,14 +540,20 @@
 				BA198D0423F591F900055541 /* AddModel.swift in Sources */,
 				BA9304BC23EB3BE10093B3E7 /* MainViewController.swift in Sources */,
 				BA4782FF23F1DB4400F0913F /* Main.swift in Sources */,
+				BA198D9023FDB99200055541 /* NumberTextField.swift in Sources */,
+				BA4B052A240031AA00FBB9BA /* SummaryViewController.swift in Sources */,
+				BA4B0530240033E200FBB9BA /* SummaryPresenter.swift in Sources */,
 				BA47830323F1DF6800F0913F /* MainModel.swift in Sources */,
 				BA198C5523F43C9600055541 /* MainPresenter.swift in Sources */,
+				BA4B052E240033CD00FBB9BA /* SummaryModel.swift in Sources */,
 				BA198D8423F7310600055541 /* ProductTableViewCell.swift in Sources */,
 				BA198CF623F4935800055541 /* DBHelper.swift in Sources */,
-				BA9304E823EB66D20093B3E7 /* Product.swift in Sources */,
+				BA9304E823EB66D20093B3E7 /* ProductEntity.swift in Sources */,
 				BA9304EC23EC83770093B3E7 /* AddViewController.swift in Sources */,
 				BA198D8723FC434800055541 /* Detail.swift in Sources */,
 				BA9304B823EB3BE10093B3E7 /* AppDelegate.swift in Sources */,
+				BA4B053224004B2300FBB9BA /* SummaryEntity.swift in Sources */,
+				BA4B052C2400336300FBB9BA /* Summary.swift in Sources */,
 				BA198D8B23FC440700055541 /* DetailModel.swift in Sources */,
 				BA198D0623F5929D00055541 /* Add.swift in Sources */,
 				BA9304BA23EB3BE10093B3E7 /* SceneDelegate.swift in Sources */,
@@ -551,6 +731,7 @@
 		};
 		BA9304DF23EB3BE20093B3E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B18BC55BB29B13ABC86C4EC6 /* Pods-BusinessInventory-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -572,6 +753,7 @@
 		};
 		BA9304E023EB3BE20093B3E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCE8362B05F6751FF604724E /* Pods-BusinessInventory-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -592,6 +774,7 @@
 		};
 		BA9304E223EB3BE20093B3E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCD9825002B3696A1D3D46FC /* Pods-BusinessInventory-swiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -614,6 +797,7 @@
 		};
 		BA9304E323EB3BE20093B3E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6671CCD7351BD7652B7002DB /* Pods-BusinessInventory-swiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -636,6 +820,7 @@
 		};
 		BA9304E523EB3BE20093B3E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39629C3BF1A7737396DF6A0 /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -656,6 +841,7 @@
 		};
 		BA9304E623EB3BE20093B3E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F88EAFE5A1B6BEB0DA2F0CE /* Pods-BusinessInventory-swift-BusinessInventory-swiftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
