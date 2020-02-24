@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialButtons_Theming
 
 class MainViewController: UIViewController, MainViewable, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,12 +19,42 @@ class MainViewController: UIViewController, MainViewable, UITableViewDelegate, U
     var products: [ProductEntity] = []
     var selectedItem = 0
     
+    let floatingButton = MDCFloatingButton()
+    let containerScheme = MDCContainerScheme()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         tvProduct.dataSource = self
         tvProduct.delegate = self
+        
+        let margins = view.layoutMarginsGuide
+        
+        let plusImage = UIImage(named: "ic_action_add")
+        floatingButton.setImage(plusImage, for: .normal)
+        floatingButton.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        floatingButton.setElevation(ShadowElevation(rawValue: 12), for: .highlighted)
+        floatingButton.minimumSize = CGSize(width: 50, height: 50)
+        containerScheme.colorScheme.primaryColor = .red
+        containerScheme.colorScheme.backgroundColor = .red
+        floatingButton.applySecondaryTheme(withScheme: containerScheme)
+        floatingButton.setBackgroundColor(UIColor(cgColor: CGColor(srgbRed: 0, green: 133/255, blue: 119/255, alpha: 1)))
+        floatingButton.addTarget(self, action: #selector(MainViewController.floatingButtonAdd(_:)), for: .touchUpInside)
+
+        self.view.addSubview(floatingButton)
+        
+        floatingButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        floatingButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
+        floatingButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20).isActive = true
+
+        floatingButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        floatingButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    @objc func floatingButtonAdd(_ floatingButton: MDCFloatingButton) {
+        self.performSegue(withIdentifier: "add", sender: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -7,6 +7,8 @@ target 'BusinessInventory-swift' do
 
   # Pods for BusinessInventory-swift
   pod 'SDWebImage', '~> 5.0'
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+Theming'
 #  pod 'MGCollapsingHeader'
   pod 'SimpleCollapsingHeaderView'
 

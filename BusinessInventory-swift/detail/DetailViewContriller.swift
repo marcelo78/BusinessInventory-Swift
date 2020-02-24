@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import MaterialComponents.MaterialButtons
+import MaterialComponents.MaterialButtons_Theming
 
 class DetailViewController: UIViewController, DetailViewable {
     
@@ -23,12 +25,35 @@ class DetailViewController: UIViewController, DetailViewable {
     @IBOutlet var lblPlace: UILabel!
     @IBOutlet var lblType: UILabel!
     @IBOutlet var lblPrice: UILabel!
+    let floatingButton = MDCFloatingButton()
+    let containerScheme = MDCContainerScheme()
     
     var selectedItem = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let plusImage = UIImage(named: "ic_action_edit")
+        floatingButton.setImage(plusImage, for: .normal)
+        floatingButton.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        floatingButton.setElevation(ShadowElevation(rawValue: 12), for: .highlighted)
+        floatingButton.minimumSize = CGSize(width: 50, height: 50)
+        containerScheme.colorScheme.primaryColor = .red
+        containerScheme.colorScheme.backgroundColor = .red
+        floatingButton.applySecondaryTheme(withScheme: containerScheme)
+        floatingButton.setBackgroundColor(UIColor(cgColor: CGColor(srgbRed: 0, green: 133/255, blue: 119/255, alpha: 1)))
+        floatingButton.addTarget(self, action: #selector(DetailViewController.floatingButtonEdit(_:)), for: .touchUpInside)
+
+        self.view.addSubview(floatingButton)
+        
+        floatingButton.translatesAutoresizingMaskIntoConstraints = false
+
+        let horizontalConstraint = NSLayoutConstraint(item: floatingButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: floatingButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1, constant: 314)
+        let widthConstraint = NSLayoutConstraint(item: floatingButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60)
+        let heightConstraint = NSLayoutConstraint(item: floatingButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60)
+        view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
         
         refreshUI()
     }
@@ -60,13 +85,13 @@ class DetailViewController: UIViewController, DetailViewable {
 
         imageItem.sd_setImage(with: URL(string: product.photo), placeholderImage: img)
     }
+    
+    @objc func floatingButtonEdit(_ floatingButton: MDCFloatingButton) {
+        self.performSegue(withIdentifier: "edit", sender: nil)
+    }
 
     @IBAction func goBack(_ sender: Any) {
         closeDetail()
-    }
-    
-    @IBAction func btnEdit(_ sender: Any) {
-        self.performSegue(withIdentifier: "edit", sender: nil)
     }
     
     func closeDetail() {

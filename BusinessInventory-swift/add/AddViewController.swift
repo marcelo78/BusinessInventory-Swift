@@ -42,12 +42,12 @@ class AddViewController: UIViewController, AddViewable {
         }
         
         tfTotalProfitUs.isEnabled = false
-        tfBoughtNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        tfSoldNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        tfUnidBuyPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        tfUnidSellPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        tfTotalCostUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        tfTotalReceivedUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        tfBoughtNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
+        tfSoldNo.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
+        tfUnidBuyPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
+        tfUnidSellPriceUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
+        tfTotalCostUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
+        tfTotalReceivedUs.addTarget(self, action: #selector(AddViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
